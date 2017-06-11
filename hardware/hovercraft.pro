@@ -1,4 +1,4 @@
-update=Fri 09 Jun 2017 15:14:33 NZST
+update=10/06/2017 10:00:19 p.m.
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -56,5 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-[general]
-version=1
+LibName30=C:/Program Files/KiCad/share/kicad/library/switches
