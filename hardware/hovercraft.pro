@@ -1,4 +1,4 @@
-update=10/06/2017 10:00:19 p.m.
+update=Mon 12 Jun 2017 09:43:22 NZST
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Program Files/KiCad/share/kicad/library/switches
+LibName31=switches
