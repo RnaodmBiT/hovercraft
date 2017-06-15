@@ -10,3 +10,14 @@ This project will produce a PCB design that can be used for prototyping remote c
   - Be programmable over JTAG or USB.
   - Use as minimum number of parts.
   - Make use of an STM32 microcontroller.
+
+
+ ## Connectivity
+  - Radio
+    - RN41
+      - UART
+      - LED connected to GPIO5 (Open Drain)
+      - Connect GPIOs 3/4/6 to GND
+      - Connect GPIO 7 to ground with solder bridge high
+      
+    - RFM69

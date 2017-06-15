@@ -1,4 +1,4 @@
-update=14/06/2017 11:02:00 p.m.
+update=15/06/2017 10:26:56 p.m.
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -58,5 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=stm32
 LibName31=switches
-[general]
-version=1
+LibName32=parts

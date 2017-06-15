@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:stm32
 LIBS:switches
+LIBS:parts
 LIBS:minibot-cache
 EELAYER 25 0
 EELAYER END
