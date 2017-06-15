@@ -47,18 +47,18 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 3650 5100 750  800 
+S 3050 5050 750  800 
 U 59425D39
 F0 "Microcontroller" 60
 F1 "microcontroller.sch" 60
-F2 "PORTA" I R 4400 5600 60 
-F3 "PORTB" I R 4400 5700 60 
-F4 "nRST" I R 4400 5350 60 
-F5 "BOOT" I R 4400 5450 60 
+F2 "PORTA" I R 3800 5550 60 
+F3 "PORTB" I R 3800 5650 60 
+F4 "nRST" I R 3800 5300 60 
+F5 "BOOT" I R 3800 5400 60 
 $EndSheet
-Text Label 4400 5350 0    60   ~ 0
+Text Label 3800 5300 0    60   ~ 0
 nRST
-Text Label 4400 5450 0    60   ~ 0
+Text Label 3800 5400 0    60   ~ 0
 BOOT
 $Comp
 L SW_Push SW?
@@ -724,140 +724,140 @@ $EndComp
 Text Notes 4900 1050 0    60   ~ 0
 3V3 Regulation\n
 Wire Bus Line
-	4400 5600 5250 5600
+	3800 5550 4650 5550
 Wire Bus Line
-	5250 5600 5250 7400
+	4650 5550 4650 7350
 Wire Bus Line
-	4400 5700 4800 5700
+	3800 5650 4200 5650
 Wire Bus Line
-	4800 5700 4800 7400
-Text Label 4900 6000 0    60   ~ 0
+	4200 5650 4200 7350
+Text Label 4300 5950 0    60   ~ 0
 PB0
-Text Label 4900 6100 0    60   ~ 0
+Text Label 4300 6050 0    60   ~ 0
 PB1
-Text Label 4900 6200 0    60   ~ 0
+Text Label 4300 6150 0    60   ~ 0
 PB2
-Text Label 4900 6300 0    60   ~ 0
+Text Label 4300 6250 0    60   ~ 0
 PB3
-Text Label 4900 6400 0    60   ~ 0
+Text Label 4300 6350 0    60   ~ 0
 PB4
-Text Label 4900 6500 0    60   ~ 0
+Text Label 4300 6450 0    60   ~ 0
 PB5
-Text Label 4900 6600 0    60   ~ 0
+Text Label 4300 6550 0    60   ~ 0
 PB6
-Text Label 4900 6700 0    60   ~ 0
+Text Label 4300 6650 0    60   ~ 0
 PB7
-Text Label 4900 6800 0    60   ~ 0
+Text Label 4300 6750 0    60   ~ 0
 PB8
-Text Label 4900 6900 0    60   ~ 0
+Text Label 4300 6850 0    60   ~ 0
 PB9
-Text Label 4900 7000 0    60   ~ 0
+Text Label 4300 6950 0    60   ~ 0
 PB10
-Text Label 4900 7100 0    60   ~ 0
+Text Label 4300 7050 0    60   ~ 0
 PB11
-Text Label 4900 7200 0    60   ~ 0
+Text Label 4300 7150 0    60   ~ 0
 PB12
-Text Label 4900 7300 0    60   ~ 0
+Text Label 4300 7250 0    60   ~ 0
 PB13
-Text Label 4900 7400 0    60   ~ 0
+Text Label 4300 7350 0    60   ~ 0
 PB14
-Text Label 4900 7500 0    60   ~ 0
+Text Label 4300 7450 0    60   ~ 0
 PB15
 Entry Bus Bus
-	4800 5900 4900 6000
+	4200 5850 4300 5950
 Entry Bus Bus
-	4800 6000 4900 6100
+	4200 5950 4300 6050
 Entry Bus Bus
-	4800 6100 4900 6200
+	4200 6050 4300 6150
 Entry Bus Bus
-	4800 6200 4900 6300
+	4200 6150 4300 6250
 Entry Bus Bus
-	4800 6300 4900 6400
+	4200 6250 4300 6350
 Entry Bus Bus
-	4800 6400 4900 6500
+	4200 6350 4300 6450
 Entry Bus Bus
-	4800 6500 4900 6600
+	4200 6450 4300 6550
 Entry Bus Bus
-	4800 6600 4900 6700
+	4200 6550 4300 6650
 Entry Bus Bus
-	4800 6700 4900 6800
+	4200 6650 4300 6750
 Entry Bus Bus
-	4800 6800 4900 6900
+	4200 6750 4300 6850
 Entry Bus Bus
-	4800 6900 4900 7000
+	4200 6850 4300 6950
 Entry Bus Bus
-	4800 7000 4900 7100
+	4200 6950 4300 7050
 Entry Bus Bus
-	4800 7100 4900 7200
+	4200 7050 4300 7150
 Entry Bus Bus
-	4800 7200 4900 7300
+	4200 7150 4300 7250
 Entry Bus Bus
-	4800 7300 4900 7400
+	4200 7250 4300 7350
 Entry Bus Bus
-	4800 7400 4900 7500
+	4200 7350 4300 7450
 Entry Bus Bus
-	5250 5900 5350 6000
+	4650 5850 4750 5950
 Entry Bus Bus
-	5250 6000 5350 6100
+	4650 5950 4750 6050
 Entry Bus Bus
-	5250 6100 5350 6200
+	4650 6050 4750 6150
 Entry Bus Bus
-	5250 6200 5350 6300
+	4650 6150 4750 6250
 Entry Bus Bus
-	5250 6300 5350 6400
+	4650 6250 4750 6350
 Entry Bus Bus
-	5250 6400 5350 6500
+	4650 6350 4750 6450
 Entry Bus Bus
-	5250 6500 5350 6600
+	4650 6450 4750 6550
 Entry Bus Bus
-	5250 6600 5350 6700
+	4650 6550 4750 6650
 Entry Bus Bus
-	5250 6700 5350 6800
+	4650 6650 4750 6750
 Entry Bus Bus
-	5250 6800 5350 6900
+	4650 6750 4750 6850
 Entry Bus Bus
-	5250 6900 5350 7000
+	4650 6850 4750 6950
 Entry Bus Bus
-	5250 7000 5350 7100
+	4650 6950 4750 7050
 Entry Bus Bus
-	5250 7100 5350 7200
+	4650 7050 4750 7150
 Entry Bus Bus
-	5250 7200 5350 7300
+	4650 7150 4750 7250
 Entry Bus Bus
-	5250 7300 5350 7400
+	4650 7250 4750 7350
 Entry Bus Bus
-	5250 7400 5350 7500
-Text Label 5350 6000 0    60   ~ 0
+	4650 7350 4750 7450
+Text Label 4750 5950 0    60   ~ 0
 PA0
-Text Label 5350 6100 0    60   ~ 0
+Text Label 4750 6050 0    60   ~ 0
 PA1
-Text Label 5350 6200 0    60   ~ 0
+Text Label 4750 6150 0    60   ~ 0
 PA2
-Text Label 5350 6300 0    60   ~ 0
+Text Label 4750 6250 0    60   ~ 0
 PA3
-Text Label 5350 6400 0    60   ~ 0
+Text Label 4750 6350 0    60   ~ 0
 PA4
-Text Label 5350 6500 0    60   ~ 0
+Text Label 4750 6450 0    60   ~ 0
 PA5
-Text Label 5350 6600 0    60   ~ 0
+Text Label 4750 6550 0    60   ~ 0
 PA6
-Text Label 5350 6700 0    60   ~ 0
+Text Label 4750 6650 0    60   ~ 0
 PA7
-Text Label 5350 6800 0    60   ~ 0
+Text Label 4750 6750 0    60   ~ 0
 PA8
-Text Label 5350 6900 0    60   ~ 0
+Text Label 4750 6850 0    60   ~ 0
 PA9
-Text Label 5350 7000 0    60   ~ 0
+Text Label 4750 6950 0    60   ~ 0
 PA10
-Text Label 5350 7100 0    60   ~ 0
+Text Label 4750 7050 0    60   ~ 0
 PA11
-Text Label 5350 7200 0    60   ~ 0
+Text Label 4750 7150 0    60   ~ 0
 PA12
-Text Label 5350 7300 0    60   ~ 0
+Text Label 4750 7250 0    60   ~ 0
 PA13
-Text Label 5350 7400 0    60   ~ 0
+Text Label 4750 7350 0    60   ~ 0
 PA14
-Text Label 5350 7500 0    60   ~ 0
+Text Label 4750 7450 0    60   ~ 0
 PA15
 $Comp
 L LED D?
@@ -1028,4 +1028,161 @@ Text Label 1800 3700 3    60   ~ 0
 PA1
 Text Label 2150 3700 3    60   ~ 0
 PA2
+$Comp
+L CONN_02X10 J?
+U 1 1 59431D9A
+P 6300 6400
+F 0 "J?" H 6300 6950 50  0000 C CNN
+F 1 "CONN_02X10" V 6300 6400 50  0000 C CNN
+F 2 "" H 6300 5200 50  0001 C CNN
+F 3 "" H 6300 5200 50  0001 C CNN
+	1    6300 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD #PWR?
+U 1 1 594323B8
+P 6650 5950
+F 0 "#PWR?" H 6650 5800 50  0001 C CNN
+F 1 "VDD" H 6650 6100 50  0000 C CNN
+F 2 "" H 6650 5950 50  0001 C CNN
+F 3 "" H 6650 5950 50  0001 C CNN
+	1    6650 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD #PWR?
+U 1 1 59432438
+P 5950 5950
+F 0 "#PWR?" H 5950 5800 50  0001 C CNN
+F 1 "VDD" H 5950 6100 50  0000 C CNN
+F 2 "" H 5950 5950 50  0001 C CNN
+F 3 "" H 5950 5950 50  0001 C CNN
+	1    5950 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 5950 6050 5950
+Wire Wire Line
+	6550 5950 6650 5950
+Wire Wire Line
+	6550 6050 6650 6050
+Wire Wire Line
+	6650 6050 6650 6950
+Wire Wire Line
+	6650 6750 6550 6750
+Connection ~ 6650 6750
+Wire Wire Line
+	6550 6650 6650 6650
+Connection ~ 6650 6650
+Wire Wire Line
+	6550 6550 6650 6550
+Connection ~ 6650 6550
+Wire Wire Line
+	6550 6450 6650 6450
+Connection ~ 6650 6450
+Wire Wire Line
+	6550 6350 6650 6350
+Connection ~ 6650 6350
+Wire Wire Line
+	6550 6250 6650 6250
+Connection ~ 6650 6250
+Wire Wire Line
+	6550 6150 6650 6150
+Connection ~ 6650 6150
+$Comp
+L GND #PWR?
+U 1 1 59432D45
+P 6650 6950
+F 0 "#PWR?" H 6650 6700 50  0001 C CNN
+F 1 "GND" H 6650 6800 50  0000 C CNN
+F 2 "" H 6650 6950 50  0001 C CNN
+F 3 "" H 6650 6950 50  0001 C CNN
+	1    6650 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 6850 6650 6850
+Connection ~ 6650 6850
+$Comp
+L R_Small R?
+U 1 1 59433535
+P 5900 6950
+F 0 "R?" V 5850 6800 50  0000 L CNN
+F 1 "10k" V 5850 7000 50  0000 L CNN
+F 2 "" H 5900 6950 50  0001 C CNN
+F 3 "" H 5900 6950 50  0001 C CNN
+	1    5900 6950
+	-1   0    0    1   
+$EndComp
+$Comp
+L R_Small R?
+U 1 1 5943401F
+P 5750 6950
+F 0 "R?" V 5700 6800 50  0000 L CNN
+F 1 "10k" V 5700 7000 50  0000 L CNN
+F 2 "" H 5750 6950 50  0001 C CNN
+F 3 "" H 5750 6950 50  0001 C CNN
+	1    5750 6950
+	-1   0    0    1   
+$EndComp
+$Comp
+L R_Small R?
+U 1 1 594340AC
+P 5600 6950
+F 0 "R?" V 5550 6800 50  0000 L CNN
+F 1 "10k" V 5550 7000 50  0000 L CNN
+F 2 "" H 5600 6950 50  0001 C CNN
+F 3 "" H 5600 6950 50  0001 C CNN
+	1    5600 6950
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59434140
+P 5750 7100
+F 0 "#PWR?" H 5750 6850 50  0001 C CNN
+F 1 "GND" H 5750 6950 50  0000 C CNN
+F 2 "" H 5750 7100 50  0001 C CNN
+F 3 "" H 5750 7100 50  0001 C CNN
+	1    5750 7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 7100 5750 7050
+Wire Wire Line
+	5600 7100 5900 7100
+Wire Wire Line
+	5900 7100 5900 7050
+Wire Wire Line
+	5600 7100 5600 7050
+Connection ~ 5750 7100
+Wire Wire Line
+	6050 6850 5900 6850
+Wire Wire Line
+	6050 6750 5750 6750
+Wire Wire Line
+	5750 6750 5750 6850
+Wire Wire Line
+	6050 6450 5600 6450
+Wire Wire Line
+	5600 6450 5600 6850
+Text Label 6050 6650 2    60   ~ 0
+nRST
+Text Label 6050 6050 2    60   ~ 0
+PB4
+Text Label 6050 6150 2    60   ~ 0
+PA15
+Text Label 6050 6250 2    60   ~ 0
+PA13
+Text Label 6050 6350 2    60   ~ 0
+PA14
+Text Label 6050 6550 2    60   ~ 0
+PB3
+Text Notes 5700 5600 0    60   ~ 0
+ST Link JTAG Connector
+Text Label 3900 5650 0    60   ~ 0
+PORTB
+Text Label 3900 5550 0    60   ~ 0
+PORTA
 $EndSCHEMATC

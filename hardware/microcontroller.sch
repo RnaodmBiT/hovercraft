@@ -384,38 +384,6 @@ Text Label 2050 4800 0    60   ~ 0
 PB14
 Wire Bus Line
 	1800 5250 1650 5250
-Text Label 9800 3300 0    60   ~ 0
-PA1
-Text Label 9800 3400 0    60   ~ 0
-PA2
-Text Label 9800 3500 0    60   ~ 0
-PA3
-Text Label 9800 3600 0    60   ~ 0
-PA4
-Text Label 9800 3700 0    60   ~ 0
-PA5
-Text Label 9800 3800 0    60   ~ 0
-PA6
-Text Label 9800 3900 0    60   ~ 0
-PA7
-Text Label 9800 4000 0    60   ~ 0
-PA8
-Text Label 9800 4100 0    60   ~ 0
-PA9
-Text Label 9800 4200 0    60   ~ 0
-PA10
-Text Label 9800 4300 0    60   ~ 0
-PA11
-Text Label 9800 4400 0    60   ~ 0
-PA12
-Text Label 9800 4500 0    60   ~ 0
-PA13
-Text Label 9800 4600 0    60   ~ 0
-PA14
-Text Label 9800 4700 0    60   ~ 0
-PA15
-Text Label 9800 4800 0    60   ~ 0
-PA16
 Wire Wire Line
 	9700 3300 10100 3300
 Wire Wire Line
@@ -608,4 +576,36 @@ Wire Wire Line
 	2100 6650 2100 6550
 Text Notes 1500 6350 0    60   ~ 0
 Boot Mode Select BOOT1
+Text Label 9800 3300 0    60   ~ 0
+PA0
+Text Label 9800 3400 0    60   ~ 0
+PA1
+Text Label 9800 3500 0    60   ~ 0
+PA2
+Text Label 9800 3600 0    60   ~ 0
+PA3
+Text Label 9800 3700 0    60   ~ 0
+PA4
+Text Label 9800 3800 0    60   ~ 0
+PA5
+Text Label 9800 3900 0    60   ~ 0
+PA6
+Text Label 9800 4000 0    60   ~ 0
+PA7
+Text Label 9800 4100 0    60   ~ 0
+PA8
+Text Label 9800 4200 0    60   ~ 0
+PA9
+Text Label 9800 4300 0    60   ~ 0
+PA10
+Text Label 9800 4400 0    60   ~ 0
+PA11
+Text Label 9800 4500 0    60   ~ 0
+PA12
+Text Label 9800 4600 0    60   ~ 0
+PA13
+Text Label 9800 4700 0    60   ~ 0
+PA14
+Text Label 9800 4800 0    60   ~ 0
+PA15
 $EndSCHEMATC
