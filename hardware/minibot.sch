@@ -926,29 +926,21 @@ Text Label 8750 5400 2    60   ~ 0
 BT_TXD
 Text Label 8750 5500 2    60   ~ 0
 BT_RXD
-Text Label 8750 5600 2    60   ~ 0
-BT_CTS
-Text Label 8750 5700 2    60   ~ 0
-BT_RTS
 Text Label 8300 1900 2    60   ~ 0
 BT_TXD
 Text Label 8300 2000 2    60   ~ 0
 BT_RXD
 Text Label 8300 1700 2    60   ~ 0
-BT_CTS
-Text Label 8300 1800 2    60   ~ 0
-BT_RTS
-Text Label 8300 2200 2    60   ~ 0
 CH0
-Text Label 8300 2300 2    60   ~ 0
+Text Label 8300 1800 2    60   ~ 0
 CH1
-Text Label 8300 2400 2    60   ~ 0
+Text Label 8300 2300 2    60   ~ 0
 CH2
-Text Label 7450 1700 2    60   ~ 0
+Text Label 8300 2400 2    60   ~ 0
 CH3
-Text Label 7450 1800 2    60   ~ 0
+Text Label 7450 1700 2    60   ~ 0
 CH4
-Text Label 7450 2100 2    60   ~ 0
+Text Label 7450 1800 2    60   ~ 0
 CH5
 $Comp
 L LSM6DS3US U?
@@ -1694,4 +1686,17 @@ Wire Wire Line
 	3650 4650 3950 4650
 Text Notes 4250 3350 0    60   ~ 0
 Camera Module\nAddress = 0x21\n
+Text Notes 2500 6500 0    60   ~ 0
+CH0 - PA0 - TIM2_CH1\nCH1 - PA1 - TIM2_CH2\nCH2 - PA6 - TIM3_CH1\nCH3 - PA7 - TIM3_CH2\nCH4 - PB0 - TIM3_CH3\nCH5 - PB1 - TIM3_CH4
+$Comp
+L GND #PWR?
+U 1 1 5949392F
+P 8750 5700
+F 0 "#PWR?" H 8750 5450 50  0001 C CNN
+F 1 "GND" H 8750 5550 50  0000 C CNN
+F 2 "" H 8750 5700 50  0001 C CNN
+F 3 "" H 8750 5700 50  0001 C CNN
+	1    8750 5700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
