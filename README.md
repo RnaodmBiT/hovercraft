@@ -5,12 +5,11 @@ This project will produce a PCB design that can be used for prototyping remote c
  ## Requirements
   - Support a number of external ESCs and Servos.
   - Be remote controlled. This might require a second USB dongle to be produced if Bluetooth or WiFi isn't used.
-  - Be able to take still images and transmit then to the controller.
   - It should include an accelerometer, gyroscope, and magnetometer for any control systems.
-  - Be programmable over JTAG or USB.
+  - Be programmable over SWD or USB.
   - Use as minimum number of parts.
   - Make use of an STM32 microcontroller.
-
+  - Provide external PIO access for use in different projects.
 
  ## Connectivity
   - Radio
@@ -19,5 +18,8 @@ This project will produce a PCB design that can be used for prototyping remote c
       - LED connected to GPIO5 (Open Drain)
       - Connect GPIOs 3/4/6 to GND
       - Connect GPIO 7 to ground with solder bridge high
+
+  - Accelerometer
+    - LSM6DS3US
+      - I2C
       
-    - RFM69
