@@ -765,7 +765,7 @@ Text Label 8700 1750 2    60   ~ 0
 BT_TXD
 Text Label 8700 1850 2    60   ~ 0
 BT_RXD
-Text Label 8700 1550 2    60   ~ 0
+Text Label 8700 3050 2    60   ~ 0
 CH0
 Text Label 8700 1650 2    60   ~ 0
 CH1
@@ -810,9 +810,7 @@ Wire Wire Line
 Wire Wire Line
 	9800 2250 9800 2050
 Wire Wire Line
-	9450 2250 9650 2250
-Wire Wire Line
-	9650 2250 9800 2250
+	9450 2250 9800 2250
 Connection ~ 9650 2250
 Wire Wire Line
 	9800 1750 9800 1850
@@ -825,9 +823,7 @@ Wire Wire Line
 Wire Wire Line
 	10800 2250 10800 2050
 Wire Wire Line
-	10450 2250 10650 2250
-Wire Wire Line
-	10650 2250 10800 2250
+	10450 2250 10800 2250
 Connection ~ 10650 2250
 Wire Wire Line
 	10800 1750 10800 1850
@@ -836,27 +832,17 @@ Wire Wire Line
 Wire Wire Line
 	10700 5700 10550 5700
 Wire Wire Line
-	10700 5300 10700 5400
-Wire Wire Line
-	10700 5400 10700 5500
-Wire Wire Line
-	10700 5500 10700 5600
-Wire Wire Line
-	10700 5600 10700 5700
+	10700 5300 10700 5700
 Wire Wire Line
 	10150 5600 10700 5600
 Connection ~ 10700 5600
 Wire Wire Line
-	10150 5500 10700 5500
-Wire Wire Line
-	10700 5500 10850 5500
+	10150 5500 10850 5500
 Wire Wire Line
 	10150 5400 10700 5400
 Connection ~ 10700 5500
 Wire Wire Line
-	10150 5700 10200 5700
-Wire Wire Line
-	10200 5700 10350 5700
+	10150 5700 10350 5700
 Connection ~ 10200 5700
 Wire Wire Line
 	10150 5300 10700 5300
@@ -872,13 +858,7 @@ Wire Wire Line
 Wire Wire Line
 	9600 6100 9600 6000
 Wire Wire Line
-	9300 6100 9400 6100
-Wire Wire Line
-	9400 6100 9450 6100
-Wire Wire Line
-	9450 6100 9500 6100
-Wire Wire Line
-	9500 6100 9600 6100
+	9300 6100 9600 6100
 Wire Wire Line
 	9300 6100 9300 6000
 Connection ~ 9450 6100
@@ -889,9 +869,7 @@ Wire Wire Line
 	9500 6000 9500 6100
 Connection ~ 9500 6100
 Wire Wire Line
-	8250 5200 8600 5200
-Wire Wire Line
-	8600 5200 8750 5200
+	8250 5200 8750 5200
 Wire Wire Line
 	8600 5100 8600 5200
 Connection ~ 8600 5200
@@ -900,17 +878,7 @@ Wire Wire Line
 Wire Wire Line
 	1550 7150 1050 7150
 Wire Wire Line
-	1550 4950 1550 5650
-Wire Wire Line
-	1550 5650 1550 5950
-Wire Wire Line
-	1550 5950 1550 6250
-Wire Wire Line
-	1550 6250 1550 6550
-Wire Wire Line
-	1550 6550 1550 6850
-Wire Wire Line
-	1550 6850 1550 7150
+	1550 4950 1550 7150
 Wire Wire Line
 	1050 6850 1550 6850
 Connection ~ 1550 6850
@@ -949,17 +917,7 @@ Wire Wire Line
 Wire Wire Line
 	2350 1300 2500 1300
 Wire Wire Line
-	1750 5750 1750 6050
-Wire Wire Line
-	1750 6050 1750 6350
-Wire Wire Line
-	1750 6350 1750 6650
-Wire Wire Line
-	1750 6650 1750 6950
-Wire Wire Line
-	1750 6950 1750 7250
-Wire Wire Line
-	1750 7250 1750 7400
+	1750 5750 1750 7400
 Wire Wire Line
 	1500 1900 1400 1900
 Connection ~ 1500 1900
@@ -970,50 +928,16 @@ Wire Wire Line
 Wire Wire Line
 	1900 4950 2000 4950
 Wire Wire Line
-	1400 4950 1550 4950
+	1400 4950 1600 4950
 Wire Wire Line
-	1550 4950 1600 4950
-Wire Wire Line
-	4500 1200 4700 1200
-Wire Wire Line
-	4700 1200 4900 1200
+	4500 1200 4900 1200
 Connection ~ 4700 1200
 Wire Bus Line
 	6750 1150 8000 1150
 Wire Bus Line
 	6750 1250 7150 1250
 Wire Bus Line
-	7150 1250 7150 1450
-Wire Bus Line
-	7150 1450 7150 1550
-Wire Bus Line
-	7150 1550 7150 1650
-Wire Bus Line
-	7150 1650 7150 1750
-Wire Bus Line
-	7150 1750 7150 1850
-Wire Bus Line
-	7150 1850 7150 1950
-Wire Bus Line
-	7150 1950 7150 2050
-Wire Bus Line
-	7150 2050 7150 2150
-Wire Bus Line
-	7150 2150 7150 2250
-Wire Bus Line
-	7150 2250 7150 2350
-Wire Bus Line
-	7150 2350 7150 2450
-Wire Bus Line
-	7150 2450 7150 2550
-Wire Bus Line
-	7150 2550 7150 2650
-Wire Bus Line
-	7150 2650 7150 2750
-Wire Bus Line
-	7150 2750 7150 2850
-Wire Bus Line
-	7150 2850 7150 2950
+	7150 1250 7150 2950
 Wire Wire Line
 	850  3400 850  3350
 Wire Wire Line
@@ -1035,37 +959,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 3600 10150 3600
 Wire Bus Line
-	8000 1150 8000 1450
-Wire Bus Line
-	8000 1450 8000 1550
-Wire Bus Line
-	8000 1550 8000 1650
-Wire Bus Line
-	8000 1650 8000 1750
-Wire Bus Line
-	8000 1750 8000 1850
-Wire Bus Line
-	8000 1850 8000 1950
-Wire Bus Line
-	8000 1950 8000 2050
-Wire Bus Line
-	8000 2050 8000 2150
-Wire Bus Line
-	8000 2150 8000 2250
-Wire Bus Line
-	8000 2250 8000 2350
-Wire Bus Line
-	8000 2350 8000 2450
-Wire Bus Line
-	8000 2450 8000 2550
-Wire Bus Line
-	8000 2550 8000 2650
-Wire Bus Line
-	8000 2650 8000 2750
-Wire Bus Line
-	8000 2750 8000 2850
-Wire Bus Line
-	8000 2850 8000 2950
+	8000 1150 8000 2950
 Wire Wire Line
 	7250 1550 7850 1550
 Wire Wire Line
@@ -1156,9 +1050,7 @@ F 3 "" H 4100 7150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 7300 3950 7300
-Wire Wire Line
-	3950 7300 4100 7300
+	3800 7300 4100 7300
 Wire Wire Line
 	4100 7300 4100 7250
 Wire Wire Line
@@ -1167,9 +1059,7 @@ Connection ~ 3950 7300
 Wire Wire Line
 	3800 7050 3800 7000
 Wire Wire Line
-	3800 7000 3950 7000
-Wire Wire Line
-	3950 7000 4100 7000
+	3800 7000 4100 7000
 Wire Wire Line
 	4100 7000 4100 7050
 Connection ~ 3950 7000
@@ -1189,9 +1079,7 @@ Wire Wire Line
 Wire Wire Line
 	5950 7150 6050 7150
 Wire Wire Line
-	6050 6950 6050 7150
-Wire Wire Line
-	6050 7150 6050 7250
+	6050 6950 6050 7250
 Connection ~ 6050 7250
 Wire Wire Line
 	5950 6950 6050 6950
@@ -1245,9 +1133,7 @@ Wire Wire Line
 Text Notes 7050 5550 0    60   ~ 0
 I2C Pullups\n
 Wire Wire Line
-	7200 5900 7350 5900
-Wire Wire Line
-	7350 5900 7500 5900
+	7200 5900 7500 5900
 Connection ~ 7350 5900
 $Comp
 L C_Small C16
@@ -1286,11 +1172,7 @@ VBUS
 Wire Bus Line
 	6750 1350 6900 1350
 Wire Bus Line
-	6900 1350 6900 1700
-Wire Bus Line
-	6900 1700 6900 1800
-Wire Bus Line
-	6900 1800 6900 1900
+	6900 1350 6900 1900
 Entry Bus Bus
 	6800 2000 6900 1900
 Entry Bus Bus
@@ -1350,11 +1232,9 @@ Wire Wire Line
 	3500 1350 3500 1200
 Connection ~ 3500 1200
 Wire Wire Line
-	3100 1200 3500 1200
-Wire Wire Line
-	3500 1200 3600 1200
+	3100 1200 3600 1200
 Text Notes 2050 6700 0    60   ~ 0
-CH0 - PA0 - TIM2_CH1\nCH1 - PA1 - TIM2_CH2\nCH2 - PA6 - TIM3_CH1\nCH3 - PA7 - TIM3_CH2\nCH4 - PB0 - TIM3_CH3\nCH5 - PB1 - TIM3_CH4
+CH0 - PA15 - TIM2_CH1\nCH1 - PA1 - TIM2_CH2\nCH2 - PA6 - TIM3_CH1\nCH3 - PA7 - TIM3_CH2\nCH4 - PB0 - TIM3_CH3\nCH5 - PB1 - TIM3_CH4
 $Comp
 L GND #PWR48
 U 1 1 5949392F
