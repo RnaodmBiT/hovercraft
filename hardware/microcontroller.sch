@@ -342,13 +342,13 @@ PB9
 Text Label 2050 4400 0    60   ~ 0
 PB10
 Text Label 2050 4500 0    60   ~ 0
-PB11
-Text Label 2050 4600 0    60   ~ 0
 PB12
-Text Label 2050 4700 0    60   ~ 0
+Text Label 2050 4600 0    60   ~ 0
 PB13
-Text Label 2050 4800 0    60   ~ 0
+Text Label 2050 4700 0    60   ~ 0
 PB14
+Text Label 2050 4800 0    60   ~ 0
+PB15
 Wire Bus Line
 	1800 5250 1650 5250
 Wire Wire Line

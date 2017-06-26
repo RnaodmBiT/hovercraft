@@ -497,15 +497,11 @@ PB9
 Text Label 2250 6950 0    60   ~ 0
 PB10
 Text Label 2250 7050 0    60   ~ 0
-PB11
-Text Label 2250 7150 0    60   ~ 0
 PB12
-Text Label 2250 7250 0    60   ~ 0
+Text Label 2250 7150 0    60   ~ 0
 PB13
-Text Label 2250 7350 0    60   ~ 0
+Text Label 2250 7250 0    60   ~ 0
 PB14
-Text Label 2250 7450 0    60   ~ 0
-PB15
 Entry Bus Bus
 	2150 5850 2250 5950
 Entry Bus Bus
@@ -536,8 +532,6 @@ Entry Bus Bus
 	2150 7150 2250 7250
 Entry Bus Bus
 	2150 7250 2250 7350
-Entry Bus Bus
-	2150 7350 2250 7450
 Entry Bus Bus
 	3000 5850 3100 5950
 Entry Bus Bus
@@ -765,9 +759,9 @@ Text Label 2850 6350 2    60   ~ 0
 CH0
 Text Label 2850 6450 2    60   ~ 0
 CH1
-Text Label 2850 6550 2    60   ~ 0
+Text Label 2850 5950 2    60   ~ 0
 CH2
-Text Label 2850 6650 2    60   ~ 0
+Text Label 2850 6050 2    60   ~ 0
 CH3
 Text Label 2850 6750 2    60   ~ 0
 CH4
@@ -932,8 +926,6 @@ Wire Bus Line
 	1750 5550 3000 5550
 Wire Bus Line
 	1750 5650 2150 5650
-Wire Bus Line
-	2150 5650 2150 7350
 Wire Wire Line
 	1350 3700 1350 3650
 Wire Wire Line
@@ -986,8 +978,6 @@ Wire Wire Line
 	2250 7250 2850 7250
 Wire Wire Line
 	2250 7350 2850 7350
-Wire Wire Line
-	2250 7450 2850 7450
 Wire Wire Line
 	3700 5950 3100 5950
 Wire Wire Line
@@ -1088,9 +1078,9 @@ Text Label 6500 7300 2    60   ~ 0
 SCL
 Text Notes 6550 1050 0    60   ~ 0
 Accelerometer/Gyroscope\nAddress = 0x6A\n
-Text Label 2850 6950 2    60   ~ 0
+Text Label 2850 6550 2    60   ~ 0
 SCL
-Text Label 2850 7050 2    60   ~ 0
+Text Label 2850 6650 2    60   ~ 0
 SDA
 Text Label 6200 7300 2    60   ~ 0
 SDA
@@ -1230,7 +1220,7 @@ Connection ~ 3850 1350
 Wire Wire Line
 	3450 1350 3950 1350
 Text Notes 5200 4450 0    60   ~ 0
-Channel Pinout\nCH0 - PB4 - TIM3_CH1\nCH1 - PB5 - TIM3_CH2\nCH2 - PB6 - TIM4_CH1\nCH3 - PB7 - TIM4_CH2\nCH4 - PB8 - TIM4_CH3\nCH5 - PB9 - TIM4_CH4
+Channel Pinout\nCH0 - PB4 - TIM3_CH1\nCH1 - PB5 - TIM3_CH2\nCH2 - PB0 - TIM3_CH3\nCH3 - PB1 - TIM3_CH4\nCH4 - PB8 - TIM4_CH3\nCH5 - PB9 - TIM4_CH4
 $Comp
 L +3V3 #PWR022
 U 1 1 5948E482
@@ -1415,65 +1405,6 @@ Text Label 3700 5950 2    60   ~ 0
 BT_CTS
 Text Label 3700 6050 2    60   ~ 0
 BT_RTS
-Text Label 5050 6450 0    60   ~ 0
-PB0
-Text Label 5050 6550 0    60   ~ 0
-PB1
-Text Label 5050 6650 0    60   ~ 0
-PB2
-Text Label 5050 6750 0    60   ~ 0
-PB12
-Text Label 5050 6850 0    60   ~ 0
-PB13
-Text Label 5050 6950 0    60   ~ 0
-PB14
-Text Label 4550 6950 2    60   ~ 0
-PB15
-Text Label 4550 6850 2    60   ~ 0
-PA15
-Text Label 4550 6750 2    60   ~ 0
-PA7
-Text Label 4550 6650 2    60   ~ 0
-PA6
-Text Label 4550 6550 2    60   ~ 0
-PA5
-Text Label 4550 6450 2    60   ~ 0
-PA4
-$Comp
-L CONN_02X07 J6
-U 1 1 594DF77C
-P 4800 6750
-F 0 "J6" H 4800 7150 50  0000 C CNN
-F 1 "CONN_02X07" V 4800 6750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x07_Pitch1.27mm" H 4800 5550 50  0001 C CNN
-F 3 "" H 4800 5550 50  0001 C CNN
-	1    4800 6750
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR038
-U 1 1 594DFEF4
-P 4550 7050
-F 0 "#PWR038" H 4550 6900 50  0001 C CNN
-F 1 "+3V3" V 4550 7300 50  0000 C CNN
-F 2 "" H 4550 7050 50  0001 C CNN
-F 3 "" H 4550 7050 50  0001 C CNN
-	1    4550 7050
-	0    -1   -1   0   
-$EndComp
-$Comp
-L GND #PWR039
-U 1 1 594E080C
-P 5050 7050
-F 0 "#PWR039" H 5050 6800 50  0001 C CNN
-F 1 "GND" V 5050 6850 50  0000 C CNN
-F 2 "" H 5050 7050 50  0001 C CNN
-F 3 "" H 5050 7050 50  0001 C CNN
-	1    5050 7050
-	0    -1   -1   0   
-$EndComp
-Text Notes 4450 6200 0    60   ~ 0
-GPIO Connector\n
 Text Label 1750 5550 0    60   ~ 0
 PA[0..15]
 Text Label 1750 5650 0    60   ~ 0
@@ -1510,4 +1441,8 @@ Wire Wire Line
 	1900 1700 2050 1700
 Wire Wire Line
 	2250 1700 2450 1700
+Wire Bus Line
+	2150 5650 2150 7250
+Text Label 2250 7350 0    60   ~ 0
+PB15
 $EndSCHEMATC
