@@ -70,7 +70,7 @@ F 1 "RESET" V 9550 1800 50  0000 C CNN
 F 2 "Buttons_Switches_SMD:Panasonic_EVQPUK_EVQPUB" H 9450 2150 50  0001 C CNN
 F 3 "" H 9450 2150 50  0001 C CNN
 	1    9450 1950
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L R_Small R1
@@ -232,17 +232,6 @@ F 1 "GND" H 9400 4950 50  0000 C CNN
 F 2 "" H 9400 5100 50  0001 C CNN
 F 3 "" H 9400 5100 50  0001 C CNN
 	1    9400 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L VDD #PWR05
-U 1 1 5943A32B
-P 9400 3900
-F 0 "#PWR05" H 9400 3750 50  0001 C CNN
-F 1 "VDD" H 9400 4050 50  0000 C CNN
-F 2 "" H 9400 3900 50  0001 C CNN
-F 3 "" H 9400 3900 50  0001 C CNN
-	1    9400 3900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -698,17 +687,6 @@ $EndComp
 Text Notes 1700 2950 0    60   ~ 0
 Status LEDs\n
 $Comp
-L CONN_01X06 J5
-U 1 1 5943812A
-P 7200 5800
-F 0 "J5" H 7200 6150 50  0000 C CNN
-F 1 "SWD" V 7300 5800 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.27mm" H 7200 5800 50  0001 C CNN
-F 3 "" H 7200 5800 50  0001 C CNN
-	1    7200 5800
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR016
 U 1 1 59438DDC
 P 6750 5750
@@ -725,16 +703,12 @@ Text Label 7000 5850 2    60   ~ 0
 SWDIO
 Text Label 7000 5950 2    60   ~ 0
 nRST
-Text Label 7000 6050 2    60   ~ 0
-SWO
 Text Notes 6550 5200 0    60   ~ 0
 Programming Connector
 Text Label 3700 7250 2    60   ~ 0
 SWDIO
 Text Label 3700 7350 2    60   ~ 0
 SWCLK
-Text Label 2850 6250 2    60   ~ 0
-SWO
 Text Label 2050 3900 3    60   ~ 0
 GREEN
 Text Label 1700 3900 3    60   ~ 0
@@ -751,21 +725,21 @@ Text Label 8700 4400 2    60   ~ 0
 BT_TXD
 Text Label 8700 4500 2    60   ~ 0
 BT_RXD
-Text Label 3700 6150 2    60   ~ 0
+Text Label 3700 7450 2    60   ~ 0
 BT_TXD
-Text Label 3700 6250 2    60   ~ 0
+Text Label 2850 6250 2    60   ~ 0
 BT_RXD
-Text Label 2850 6350 2    60   ~ 0
+Text Label 3700 5950 2    60   ~ 0
 CH0
-Text Label 2850 6450 2    60   ~ 0
+Text Label 3700 6050 2    60   ~ 0
 CH1
-Text Label 2850 5950 2    60   ~ 0
+Text Label 3700 6150 2    60   ~ 0
 CH2
-Text Label 2850 6050 2    60   ~ 0
+Text Label 3700 6250 2    60   ~ 0
 CH3
-Text Label 2850 6750 2    60   ~ 0
+Text Label 3700 6550 2    60   ~ 0
 CH4
-Text Label 2850 6850 2    60   ~ 0
+Text Label 3700 6650 2    60   ~ 0
 CH5
 $Comp
 L LSM6DS3US U1
@@ -1074,7 +1048,7 @@ Wire Wire Line
 	7900 1600 7700 1600
 Text Label 7700 1400 0    60   ~ 0
 SDA
-Text Label 6500 7300 2    60   ~ 0
+Text Label 6600 7500 2    60   ~ 0
 SCL
 Text Notes 6550 1050 0    60   ~ 0
 Accelerometer/Gyroscope\nAddress = 0x6A\n
@@ -1082,45 +1056,45 @@ Text Label 2850 6550 2    60   ~ 0
 SCL
 Text Label 2850 6650 2    60   ~ 0
 SDA
-Text Label 6200 7300 2    60   ~ 0
+Text Label 6300 7500 2    60   ~ 0
 SDA
 Text Label 7700 1500 0    60   ~ 0
 SCL
 $Comp
 L R_Small R13
 U 1 1 5946DE00
-P 6500 7100
-F 0 "R13" H 6550 7050 50  0000 L CNN
-F 1 "2k2" H 6550 7150 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" H 6500 7100 50  0001 C CNN
-F 3 "" H 6500 7100 50  0001 C CNN
-	1    6500 7100
+P 6600 7300
+F 0 "R13" H 6650 7250 50  0000 L CNN
+F 1 "2k2" H 6650 7350 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 6600 7300 50  0001 C CNN
+F 3 "" H 6600 7300 50  0001 C CNN
+	1    6600 7300
 	-1   0    0    1   
 $EndComp
 $Comp
 L R_Small R12
 U 1 1 5946DF2C
-P 6200 7100
-F 0 "R12" H 6250 7050 50  0000 L CNN
-F 1 "2k2" H 6250 7150 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" H 6200 7100 50  0001 C CNN
-F 3 "" H 6200 7100 50  0001 C CNN
-	1    6200 7100
+P 6300 7300
+F 0 "R12" H 6350 7250 50  0000 L CNN
+F 1 "2k2" H 6350 7350 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 6300 7300 50  0001 C CNN
+F 3 "" H 6300 7300 50  0001 C CNN
+	1    6300 7300
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6200 6900 6200 7000
+	6300 7100 6300 7200
 Wire Wire Line
-	6500 6900 6500 7000
+	6600 7100 6600 7200
 Wire Wire Line
-	6500 7300 6500 7200
+	6600 7500 6600 7400
 Wire Wire Line
-	6200 7300 6200 7200
-Text Notes 6050 6550 0    60   ~ 0
+	6300 7500 6300 7400
+Text Notes 6150 6750 0    60   ~ 0
 I2C Pullups\n
 Wire Wire Line
-	6200 6900 6500 6900
-Connection ~ 6350 6900
+	6300 7100 6600 7100
+Connection ~ 6450 7100
 $Comp
 L C_Small C8
 U 1 1 5947649B
@@ -1220,7 +1194,7 @@ Connection ~ 3850 1350
 Wire Wire Line
 	3450 1350 3950 1350
 Text Notes 5200 4450 0    60   ~ 0
-Channel Pinout\nCH0 - PB4 - TIM3_CH1\nCH1 - PB5 - TIM3_CH2\nCH2 - PB0 - TIM3_CH3\nCH3 - PB1 - TIM3_CH4\nCH4 - PB8 - TIM4_CH3\nCH5 - PB9 - TIM4_CH4
+Channel Pinout\nCH0 - PA0 - TIM2_CH1\nCH1 - PA1 - TIM2_CH2\nCH2 - PA2 - TIM2_CH3\nCH3 - PA3 - TIM2_CH4\nCH4 - PA6 - TIM3_CH1\nCH5 - PA7 - TIM3_CH2
 $Comp
 L +3V3 #PWR022
 U 1 1 5948E482
@@ -1312,12 +1286,12 @@ $EndComp
 $Comp
 L +3V3 #PWR030
 U 1 1 5948FF64
-P 6350 6900
-F 0 "#PWR030" H 6350 6750 50  0001 C CNN
-F 1 "+3V3" H 6350 7040 50  0000 C CNN
-F 2 "" H 6350 6900 50  0001 C CNN
-F 3 "" H 6350 6900 50  0001 C CNN
-	1    6350 6900
+P 6450 7100
+F 0 "#PWR030" H 6450 6950 50  0001 C CNN
+F 1 "+3V3" H 6450 7240 50  0000 C CNN
+F 2 "" H 6450 7100 50  0001 C CNN
+F 3 "" H 6450 7100 50  0001 C CNN
+	1    6450 7100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1397,14 +1371,6 @@ F 3 "" H 1350 3300 50  0001 C CNN
 	1    1350 3300
 	1    0    0    -1  
 $EndComp
-Text Label 8700 4600 2    60   ~ 0
-BT_CTS
-Text Label 8700 4700 2    60   ~ 0
-BT_RTS
-Text Label 3700 5950 2    60   ~ 0
-BT_CTS
-Text Label 3700 6050 2    60   ~ 0
-BT_RTS
 Text Label 1750 5550 0    60   ~ 0
 PA[0..15]
 Text Label 1750 5650 0    60   ~ 0
@@ -1445,4 +1411,124 @@ Wire Bus Line
 	2150 5650 2150 7250
 Text Label 2250 7350 0    60   ~ 0
 PB15
+$Comp
+L CONN_01X05 J5
+U 1 1 5951AE21
+P 7200 5750
+F 0 "J5" H 7200 6050 50  0000 C CNN
+F 1 "CONN_01X05" V 7300 5750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x05_Pitch2.54mm" H 7200 5750 50  0001 C CNN
+F 3 "" H 7200 5750 50  0001 C CNN
+	1    7200 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR038
+U 1 1 5951BF73
+P 8700 4700
+F 0 "#PWR038" H 8700 4450 50  0001 C CNN
+F 1 "GND" H 8700 4550 50  0000 C CNN
+F 2 "" H 8700 4700 50  0001 C CNN
+F 3 "" H 8700 4700 50  0001 C CNN
+	1    8700 4700
+	1    0    0    -1  
+$EndComp
+Connection ~ 3650 1350
+$Comp
+L CONN_01X10 J7
+U 1 1 5952347D
+P 4700 7000
+F 0 "J7" H 4700 7550 50  0000 C CNN
+F 1 "CONN_01X10" V 4800 7000 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x10_Pitch2.54mm" H 4700 7000 50  0001 C CNN
+F 3 "" H 4700 7000 50  0001 C CNN
+	1    4700 7000
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR039
+U 1 1 5952375D
+P 4900 7450
+F 0 "#PWR039" H 4900 7200 50  0001 C CNN
+F 1 "GND" H 4900 7300 50  0000 C CNN
+F 2 "" H 4900 7450 50  0001 C CNN
+F 3 "" H 4900 7450 50  0001 C CNN
+	1    4900 7450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR040
+U 1 1 595237FB
+P 4900 6550
+F 0 "#PWR040" H 4900 6300 50  0001 C CNN
+F 1 "GND" H 4900 6400 50  0000 C CNN
+F 2 "" H 4900 6550 50  0001 C CNN
+F 3 "" H 4900 6550 50  0001 C CNN
+	1    4900 6550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4900 6650 5350 6650
+Wire Wire Line
+	4900 6750 5350 6750
+Wire Wire Line
+	5350 6850 4900 6850
+Wire Wire Line
+	4900 6950 5350 6950
+Wire Wire Line
+	5350 7050 4900 7050
+Wire Wire Line
+	4900 7150 5350 7150
+Wire Wire Line
+	5350 7250 4900 7250
+Wire Wire Line
+	4900 7350 5350 7350
+Text Label 5350 6650 2    60   ~ 0
+PB0
+Text Label 5350 6750 2    60   ~ 0
+PB1
+Text Label 5350 6850 2    60   ~ 0
+PB2
+Text Label 5350 6950 2    60   ~ 0
+PB10
+Text Label 5350 7050 2    60   ~ 0
+PB12
+Text Label 5350 7150 2    60   ~ 0
+PB13
+Text Label 5350 7250 2    60   ~ 0
+PB14
+Text Label 5350 7350 2    60   ~ 0
+PB15
+$Comp
+L CONN_01X02 J6
+U 1 1 59524F61
+P 4700 6150
+F 0 "J6" H 4700 6300 50  0000 C CNN
+F 1 "CONN_01X02" V 4800 6150 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 4700 6150 50  0001 C CNN
+F 3 "" H 4700 6150 50  0001 C CNN
+	1    4700 6150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4900 6100 5200 6100
+Wire Wire Line
+	4900 6200 5200 6200
+Text Label 5200 6100 2    60   ~ 0
+SDA
+Text Label 5200 6200 2    60   ~ 0
+SCL
+Text Notes 4550 5850 0    60   ~ 0
+GPIO Expansion
+$Comp
+L +3V3 #PWR?
+U 1 1 59527FD5
+P 9400 3900
+F 0 "#PWR?" H 9400 3750 50  0001 C CNN
+F 1 "+3V3" H 9400 4040 50  0000 C CNN
+F 2 "" H 9400 3900 50  0001 C CNN
+F 3 "" H 9400 3900 50  0001 C CNN
+	1    9400 3900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
