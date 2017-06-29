@@ -1417,7 +1417,7 @@ U 1 1 5951AE21
 P 6650 5750
 F 0 "J5" H 6650 6050 50  0000 C CNN
 F 1 "CONN_01X05" V 6750 5750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x05_Pitch2.54mm" H 6650 5750 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05_Pitch2.54mm" H 6650 5750 50  0001 C CNN
 F 3 "" H 6650 5750 50  0001 C CNN
 	1    6650 5750
 	1    0    0    -1  
