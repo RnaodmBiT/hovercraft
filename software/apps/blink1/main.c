@@ -1,4 +1,5 @@
 #include <stm32f4xx.h>
+#include <pio.h>
 
 extern unsigned long _estack;
 
@@ -23,17 +24,25 @@ isr_handler_t __isr_vectors[] = {
 
 void reset_handler(void) {
 
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
-    GPIOC->MODER |= GPIO_MODER_MODER13_0 | GPIO_MODER_MODER14_0 | GPIO_MODER_MODER15_0;
+    pio_enable_port(PIO_C);
+
+    pio_set_mode(PC13, PIO_OUTPUT);
+    pio_set_mode(PC14, PIO_OUTPUT);
+    pio_set_mode(PC15, PIO_OUTPUT);
+
 
     while (1) {
         delay(200000);
         // Turn the LEDs off
-        GPIOC->BSRRL |= GPIO_BSRR_BS_13 | GPIO_BSRR_BS_14 | GPIO_BSRR_BS_15;
+        pio_set_output(PC13, true);
+        pio_set_output(PC14, true);
+        pio_set_output(PC15, true);
 
         delay(200000);
         // Turn the LEDs on
-        GPIOC->BSRRH |= GPIO_BSRR_BS_13 | GPIO_BSRR_BS_14 | GPIO_BSRR_BS_15;
+        pio_set_output(PC13, false);
+        pio_set_output(PC14, false);
+        pio_set_output(PC15, false);
     }
 }
 

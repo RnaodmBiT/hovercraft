@@ -16,10 +16,13 @@ SECTIONS {
         *(.rodata)
     } > FLASH
 
-    . = 0x20000000;
     .data : {
         *(.data)
-    } >SRAM AT >FLASH
+    } >FLASH
+
+    .bss : {
+        *(.bss)
+    } >FLASH
 
 }
 

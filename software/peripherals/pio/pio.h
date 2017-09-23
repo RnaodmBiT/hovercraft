@@ -25,7 +25,7 @@ void pio_set_output(pio_t pin, bool high);
 
 
 /* Define all of the usable PIO pins */
-#define MAKE_PIO(port, pin) ((pio_t){ (port), (pin), 1 << (pin) })
+#define MAKE_PIO(PORT, PIN) ((pio_t){ .port=(PORT), .pin=(PIN), .mask=1 << (PIN) })
 
 #define PA0     MAKE_PIO(0, 0)
 #define PA1     MAKE_PIO(0, 1)

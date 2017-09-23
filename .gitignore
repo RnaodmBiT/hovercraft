@@ -22,7 +22,11 @@ _autosave-*
 
 
 # Compiled binaries
-
+*.o
+*.d
+*.a
+*.bin
+*.elf
 
 # VIM backups
 *.swp

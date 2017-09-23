@@ -9,13 +9,15 @@ OBJS = $(addprefix objs/, $(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
 ELF = $(BIN:.bin=.elf)
 
-COMPILE = arm-none-eabi-gcc -fno-common -O0 -g -mcpu=cortex-m4 -mthumb -D$(CPU)
+PERIPHERALS_DIR = ../../peripherals
+LIBS = $(foreach DIR, $(PERIPHS), $(PERIPHERALS_DIR)/$(DIR)/$(DIR).a)
+PERIPHERAL_INC = $(foreach DIR, $(PERIPHS), -I$(PERIPHERALS_DIR)/$(DIR))
+
+COMPILE = arm-none-eabi-gcc -fno-common -O0 -g -mcpu=cortex-m4 -mthumb -D$(CPU) $(PERIPHERAL_INC)
 LINK = arm-none-eabi-ld -T../../link.ld -nostartfiles
 OBJCOPY = arm-none-eabi-objcopy
 PROGRAM = st-flash write
 
-PERIPHERALS_DIR = ../../peripherals
-LIBS = $(foreach DIR, $(PERIPHS), $(PERIPHERALS_DIR)/$(DIR)/$(DIR).a)
 
 all: $(BIN) Makefile
 
