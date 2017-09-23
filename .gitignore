@@ -19,3 +19,11 @@ _autosave-*
 # Exported BOM files
 *.xml
 *.csv
+
+
+# Compiled binaries
+
+
+# VIM backups
+*.swp
+*.swo
