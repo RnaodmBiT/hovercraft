@@ -1,0 +1,19 @@
+#ifndef SYS_H
+#define SYS_H
+
+#include <stdint.h>
+#include <stdbool.h>
+
+
+typedef void (*isr_handler_t)();
+
+
+// Setup the system clock to run off the external crystal
+void sys_setup_external_clock(void);
+
+// Delay the given amount of time
+void delay_us(int us);
+void delay_ms(int ms);
+
+
+#endif
