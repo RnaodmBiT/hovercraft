@@ -11,6 +11,11 @@ void main(void) {
     pio_set_mode(PC14, PIO_OUTPUT);
     pio_set_mode(PC15, PIO_OUTPUT);
 
+    pio_set_output(PC13, true);
+    pio_set_output(PC14, true);
+    pio_set_output(PC15, true);
+
+
     while (1) {
         delay_ms(100);
 
@@ -26,5 +31,7 @@ void main(void) {
         pio_set_output(PC14, false);
         pio_set_output(PC15, false);
     }
+
+    while (1) ;
 }
 
