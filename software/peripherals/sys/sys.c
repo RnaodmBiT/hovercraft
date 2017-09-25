@@ -46,39 +46,54 @@ void reset_handler(void) {
 
 
 void sys_setup_external_clock(void) {
-    // Enable the external clock
+
+    // Enable output of the HSE on MCO1
+    //RCC->CFGR |= RCC_CFGR_MCO1_0 | RCC_CFGR_MCO1_1;
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    GPIOA->MODER |= GPIO_MODER_MODER8_1;
+
     RCC->CR |= RCC_CR_HSEON;
+    while ((RCC->CR & RCC_CR_HSERDY) == 0) ;
+
+    // Set the peripheral clock prescalers
+    RCC->CFGR = RCC_CFGR_PPRE1_DIV2 | RCC_CFGR_PPRE2_DIV1;
+
+    // Need 3 WD and prefetch
+    FLASH->ACR = FLASH_ACR_LATENCY_3WS | FLASH_ACR_PRFTEN;
 
     // Configure the PLL
     RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSE; // Use the external clock
     RCC->PLLCFGR |= (0x00 << 16) & RCC_PLLCFGR_PLLP; // Set P = 2
-    RCC->PLLCFGR |= (12 << 0) & RCC_PLLCFGR_PLLM; // Set M = 12
-    RCC->PLLCFGR |= (200 << 6) & RCC_PLLCFGR_PLLN; // Set N = 200
+    RCC->PLLCFGR |= (6 << 0) & RCC_PLLCFGR_PLLM; // Set M = 6
+    RCC->PLLCFGR |= (100 << 6) & RCC_PLLCFGR_PLLN; // Set N = 100
 
     // F_CPU = F_IN * (N / (M * P))
-    // F_CPU = 12M * (200 / (12 * 2))
+    // F_CPU = 12M * (100 / (6 * 2))
     // F_CPU = 100MHz
 
     // Enable the PLL
     RCC->CR |= RCC_CR_PLLON;
 
     // Wait for the PLL to be ready (This is ignored for now, it should just flip over automatically when its ready)
-    // while ((RCC->CR & RCC_CR_PLLRDY) == 0) ;
+    while ((RCC->CR & RCC_CR_PLLRDY) == 0) ;
 
     // Switch over to the PLL
     RCC->CFGR |= RCC_CFGR_SW_PLL;
+
+    while ((RCC->CFGR & RCC_CFGR_SWS_PLL) == 0) ;
 }
 
 
 // Delay for a certain amount of time
-void delay_us(int us) {
-    int l = (us * 3000) / 214; // FIXME: Carefully calibrated values... These will need to be changed when the clock frequency is...
+void delay_us(unsigned long us) {
+    // This is more or less witchcraft but it does work...
+    unsigned long l = (us * 23) / 3;
     asm volatile("0:" "subs %[count], 1;" "bne 0b;" : [count] "+r"(l));
 }
 
 
-void delay_ms(int ms) {
-    delay_us(ms * 1000);
+void delay_ms(unsigned long ms) {
+    delay_us(ms * 1013);
 }
 
 

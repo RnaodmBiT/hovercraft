@@ -12,8 +12,8 @@ typedef void (*isr_handler_t)();
 void sys_setup_external_clock(void);
 
 // Delay the given amount of time
-void delay_us(int us);
-void delay_ms(int ms);
+void delay_us(unsigned long us);
+void delay_ms(unsigned long ms);
 
 
 #endif

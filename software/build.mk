@@ -1,5 +1,5 @@
 
-PERIPHERALS = $(PERIPHS)
+PERIPHERALS = $(PERIPHS) sys
 
 FLASH_ADDR = 0x8000000
 
@@ -24,6 +24,7 @@ $(ELF): $(PERIPHERALS_DIR)/sys/sys.o $(OBJS) $(LIBS)
 
 $(BIN): $(ELF)
 	$(OBJCOPY) -O binary $< $@
+	#@rm $(ELF)
 
 objs/%.o: %.c
 	@mkdir -p objs
@@ -36,7 +37,7 @@ clean:
 	@rm -rf objs
 	@rm $(LIBS)
 	@rm $(BIN)
-	@rm $(ELF)
+	#@rm $(ELF)
 
 -include $(DEPS)
 
