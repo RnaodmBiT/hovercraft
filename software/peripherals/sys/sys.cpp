@@ -1,5 +1,5 @@
 #include <stm32f4xx.h>
-#include "sys.h"
+#include "sys.hpp"
 
 extern unsigned long __stack;
 
@@ -7,7 +7,23 @@ void reset_handler(void);
 void default_handler(void);
 
 void main(void);
+void call_constructors(void);
 
+
+// Stack protection
+extern "C" {
+
+// The canary value
+extern const uintptr_t __stack_chk_guard = 0xdeadbeef;
+
+// Called if the check fails
+[[noreturn]]
+void __stack_chk_fail() {
+    // TODO: Handle this error, crash?
+    while (1);
+}
+
+} // end extern "C"
 
 __attribute__ ((section("vectors")))
 isr_handler_t __isr_vectors[16] = {
@@ -39,9 +55,21 @@ void reset_handler(void) {
     // Setup the system to a good state then call main();
     sys_setup_external_clock();
 
+    call_constructors();
+
     main();
 
     while (1);
+}
+
+
+void call_constructors(void) {
+    extern void (*__init_array_start)();
+    extern void (*__init_array_end)();
+
+    for (void (**p)() = &__init_array_start; p < &__init_array_end; ++p) {
+        (*p)();
+    }
 }
 
 
@@ -97,3 +125,12 @@ void delay_ms(unsigned long ms) {
 }
 
 
+// Define the delete operators
+void operator delete(void* p) {
+    // TODO: This should crash noticeably... we don't want to hit this
+}
+
+
+void operator delete(void* p, std::size_t t) {
+    // TODO: This should also crash...?
+}

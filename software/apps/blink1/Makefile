@@ -4,8 +4,8 @@ CPU = STM32F410xx
 PERIPHS=pio
 
 # Define the name of the output file
-BIN = blink1.bin
+ELF = blink1.elf
 # Provide a list of source files to compile
-SRCS = main.c
+SRCS = main.cpp
 
 include ../../build.mk

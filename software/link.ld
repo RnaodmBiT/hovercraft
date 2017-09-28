@@ -16,6 +16,14 @@ SECTIONS {
         *(.rodata)
     } > FLASH
 
+    /* init_array is used for C++ global constructors */
+    . = ALIGN(4);
+    .init_array : {
+        __init_array_start = .;
+        KEEP (*(.init_array*))
+        __init_array_end = .;
+    } > FLASH
+
     .data : {
         *(.data)
     } >FLASH

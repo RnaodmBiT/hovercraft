@@ -1,8 +1,8 @@
 #ifndef SYS_H
 #define SYS_H
 
-#include <stdint.h>
-#include <stdbool.h>
+#include <cstdint>
+#include <cstdbool>
 
 
 typedef void (*isr_handler_t)();
