@@ -1,7 +1,7 @@
 #include <stm32f4xx.h>
 #include "sys.hpp"
 
-extern unsigned long __stack;
+extern char __stack, __data_load, __data_start, __data_end, __bss_start, __bss_end;
 
 void reset_handler(void);
 void default_handler(void);
@@ -9,6 +9,7 @@ void default_handler(void);
 void main(void);
 void call_constructors(void);
 
+void SysTickHandler(void);
 
 // Stack protection
 extern "C" {
@@ -25,8 +26,8 @@ void __stack_chk_fail() {
 
 } // end extern "C"
 
-__attribute__ ((section("vectors")))
-isr_handler_t __isr_vectors[16] = {
+__attribute__ ((section(".vectors")))
+isr_handler_t static_vectors[16] = {
     (isr_handler_t) &__stack,
     reset_handler,          // Reset
     default_handler,        // NMI
@@ -34,16 +35,29 @@ isr_handler_t __isr_vectors[16] = {
     default_handler,        // Memory management
     default_handler,        // Bus fault
     default_handler,        // Usage fault
-    0,                      // Reserved
-    0,                      // Reserved
-    0,                      // Reserved
-    0,                      // Reserved
+    0, 0, 0, 0,             // Reserved
     default_handler,        // SVCall
-    0,                      // Reserved
-    0,                      // Reserved
+    0, 0,                   // Reserved
     default_handler,        // PendSV
-    default_handler         // SysTick
+    default_handler,        // SysTick
 };
+
+__attribute__ ((section(".dynamic_vectors")))
+isr_handler_t vectors[16] = {
+    (isr_handler_t) &__stack,
+    reset_handler,          // Reset
+    default_handler,        // NMI
+    default_handler,        // Hard Fault
+    default_handler,        // Memory management
+    default_handler,        // Bus fault
+    default_handler,        // Usage fault
+    0, 0, 0, 0,             // Reserved
+    default_handler,        // SVCall
+    0, 0,                   // Reserved
+    default_handler,        // PendSV
+    SysTickHandler,         // SysTick
+};
+
 
 
 void default_handler(void) {
@@ -51,9 +65,29 @@ void default_handler(void) {
 }
 
 
+void setup_memory(void) {
+    char *src, *dst;
+
+    // Copy .data into SRAM
+    for (src = &__data_load, dst = &__data_start; dst < &__data_end;) {
+        *dst++ = *src++;
+    }
+
+    // Zero .bss
+    for (dst = &__bss_start; dst < &__bss_end;) {
+        *dst++ = 0;
+    }
+
+    // Remap the vector table
+    SCB->VTOR = (uint32_t) &vectors & SCB_VTOR_TBLOFF_Msk;
+}
+
+
 void reset_handler(void) {
     // Setup the system to a good state then call main();
     sys_setup_external_clock();
+
+    setup_memory();
 
     call_constructors();
 

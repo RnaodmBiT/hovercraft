@@ -1,8 +1,11 @@
 #include <stm32f4xx.h>
 #include "pio.hpp"
 
-GPIO_TypeDef* ports[] = { GPIOA, GPIOB, GPIOC };
 
+GPIO_TypeDef* Pio::GetPort(Port port) const {
+    static GPIO_TypeDef* ports[] = { GPIOA, GPIOB, GPIOC };
+    return ports[port];
+}
 
 /* enable the specified PIO port */
 void Pio::EnablePort(Port port) {
@@ -22,22 +25,22 @@ Pio::Pio(Port port, Pin pin, Mode mode) : port(port), pin(pin) {
 
 /* set pin mode as input or output */
 void Pio::SetMode(Mode mode) {
-    uint32_t reg = ports[port]->MODER & ~(0x3 << (pin * 2));
+    uint32_t reg = GetPort(port)->MODER & ~(0x3 << (pin * 2));
     switch (mode) {
         case Input:
-            ports[port]->MODER = reg;
+            GetPort(port)->MODER = reg;
             break;
 
         case Output:
-            ports[port]->MODER = reg | (0x1 << (pin * 2));
+            GetPort(port)->MODER = reg | (0x1 << (pin * 2));
             break;
 
         case Alternate:
-            ports[port]->MODER = reg | (0x2 << (pin * 2));
+            GetPort(port)->MODER = reg | (0x2 << (pin * 2));
             break;
 
         case Analog:
-            ports[port]->MODER = reg | (0x3 << (pin * 2));
+            GetPort(port)->MODER = reg | (0x3 << (pin * 2));
             break;
 
         default:
@@ -50,10 +53,10 @@ void Pio::SetMode(Mode mode) {
 bool Pio::operator=(bool high) {
     if (high) {
         // set the output
-        ports[port]->BSRRL |= 1 << pin;
+        GetPort(port)->BSRRL |= 1 << pin;
     } else {
         // reset the output
-        ports[port]->BSRRH |= 1 << pin;
+        GetPort(port)->BSRRH |= 1 << pin;
     }
     return high;
 }
@@ -61,6 +64,6 @@ bool Pio::operator=(bool high) {
 
 /* Get the pin state */
 Pio::operator bool() const {
-    return (ports[port]->IDR & (1 << pin)) != 0;
+    return (GetPort(port)->IDR & (1 << pin)) != 0;
 }
 

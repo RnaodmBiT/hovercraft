@@ -23,5 +23,7 @@ public:
 private:
     Port port;
     Pin pin;
+
+    GPIO_TypeDef* GetPort(Port port) const;
 };
 

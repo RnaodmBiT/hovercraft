@@ -5,13 +5,12 @@ MEMORY {
 }
 
 __stack = ORIGIN(SRAM) + LENGTH(SRAM);
-_estack = __stack;
 
 SECTIONS {
 
     . = 0;
     .text : {
-        *(vectors)
+        *(.vectors)
         *(.text)
         *(.rodata)
     } > FLASH
@@ -24,13 +23,29 @@ SECTIONS {
         __init_array_end = .;
     } > FLASH
 
-    .data : {
+    __text_end = .;
+
+    .data : AT(__text_end) {
+        . = ALIGN(64);
+        __data_start = .;
+
+        *(.dynamic_vectors)
         *(.data)
-    } >FLASH
+        *(.data.*)
+
+        __data_end = .;
+        __data_load = LOADADDR(.data);
+    } >SRAM
 
     .bss : {
+        . = ALIGN(4);
+        __bss_start = .;
+
         *(.bss)
-    } >FLASH
+        *(.bss.*)
+
+        __bss_end = .;
+    } >SRAM
 
 }
 

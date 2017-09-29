@@ -7,7 +7,8 @@ OBJS = $(addprefix objs/, $(SRCS:.cpp=.o))
 DEPS = $(OBJS:.o=.d)
 
 PERIPHERALS_DIR = ../../peripherals
-LIBS = $(foreach DIR, $(PERIPHERALS), $(PERIPHERALS_DIR)/$(DIR)/$(DIR).a)
+LIB_SRCS = $(foreach DIR, $(PERIPHERALS), $(PERIPHERALS_DIR)/$(DIR)/$(DIR).cpp)
+LIBS = $(LIB_SRCS:.cpp=.o)
 PERIPHERAL_INC = $(foreach DIR, $(PERIPHERALS), -I$(PERIPHERALS_DIR)/$(DIR))
 
 CXX_FLAGS = -fno-exceptions -fno-non-call-exceptions -fno-rtti \
@@ -18,7 +19,6 @@ COMPILE = arm-none-eabi-g++ $(CXX_FLAGS) -O3 -g -mcpu=cortex-m4 -mthumb -D$(CPU)
 LINK = arm-none-eabi-ld -T../../link.ld -nostartfiles
 OBJCOPY = arm-none-eabi-objcopy
 DEBUG = arm-none-eabi-gdb
-
 
 all: $(ELF) Makefile
 
@@ -39,9 +39,9 @@ debug: $(ELF)
 	$(DEBUG) -x ../../gdb/debug.gdb $^
 
 clean:
-	@rm -rf objs
-	@rm $(LIBS)
-	@rm $(ELF)
+	rm -rf objs
+	rm $(LIBS)
+	rm $(ELF)
 
 -include $(DEPS)
 
