@@ -20,7 +20,7 @@ void uart_init(void) {
     // Theoretically anyway, experimentation showed that the divider needed to be a bit larger
 
     // Set the baud rate
-    USART1->BRR = ((33 << 4) & USART_BRR_DIV_Mantissa) | (13 & USART_BRR_DIV_Fraction);
+    USART1->BRR = ((54 << 4) & USART_BRR_DIV_Mantissa) | (4 & USART_BRR_DIV_Fraction);
 
     // Enable transmission/reception
     USART1->CR1 |= USART_CR1_UE | USART_CR1_TE | USART_CR1_RE;

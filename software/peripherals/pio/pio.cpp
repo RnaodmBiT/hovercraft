@@ -2,7 +2,7 @@
 #include "pio.hpp"
 
 
-GPIO_TypeDef* Pio::GetPort(Port port) const {
+GPIO_TypeDef* GetPort(Pio::Port port) {
     static GPIO_TypeDef* ports[] = { GPIOA, GPIOB, GPIOC };
     return ports[port];
 }

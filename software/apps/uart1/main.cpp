@@ -1,7 +1,8 @@
-#include <sys.h>
+#include <sys.hpp>
 #include <uart.h>
-#include <pio.h>
+#include <pio.hpp>
 
+void SysTickHandler() { }
 
 void main(void) {
 
@@ -9,15 +10,13 @@ void main(void) {
 
     uart_init();
 
-    pio_enable_port(PIO_C);
-    pio_set_mode(PC13, PIO_OUTPUT);
-    pio_set_output(PC13, false);
+    Pio green(Pio::C, 13, Pio::Output);
     bool state = false;
 
     for (;;) {
         uart_write_string(msg);
-        pio_set_output(PC13, state = !state);
         delay_ms(500);
+        green = (state = !state);
     }
 
     while (1) ;

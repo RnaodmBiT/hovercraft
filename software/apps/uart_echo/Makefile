@@ -4,8 +4,8 @@ CPU = STM32F410xx
 PERIPHS=uart pio
 
 # Define the name of the output file
-BIN = uart1.bin
+ELF = uart1.elf
 # Provide a list of source files to compile
-SRCS = main.c
+SRCS = main.cpp
 
 include ../../build.mk

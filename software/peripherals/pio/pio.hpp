@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 
+
 class Pio {
 public:
     typedef uint8_t Pin;
@@ -23,7 +24,5 @@ public:
 private:
     Port port;
     Pin pin;
-
-    GPIO_TypeDef* GetPort(Port port) const;
 };
 
