@@ -124,38 +124,40 @@ void sys_setup_external_clock(void) {
     FLASH->ACR = FLASH_ACR_LATENCY_3WS | FLASH_ACR_PRFTEN;
 
     // Configure the PLL
-    RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSE; // Use the external clock
-    RCC->PLLCFGR |= (0x00 << 16) & RCC_PLLCFGR_PLLP; // Set P = 2
-    RCC->PLLCFGR |= (6 << 0) & RCC_PLLCFGR_PLLM; // Set M = 6
-    RCC->PLLCFGR |= (100 << 6) & RCC_PLLCFGR_PLLN; // Set N = 100
+    RCC->PLLCFGR = RCC_PLLCFGR_PLLSRC_HSE | // Use the external clock
+                   (0x1 << 16) & RCC_PLLCFGR_PLLP | // Set P = 4
+                   (12 << 0) & RCC_PLLCFGR_PLLM | // Set M = 12
+                   (400 << 6) & RCC_PLLCFGR_PLLN; // Set N = 400
 
     // F_CPU = F_IN * (N / (M * P))
-    // F_CPU = 12M * (100 / (6 * 2))
+    // F_CPU = 12M * (400 / (12 * 4))
     // F_CPU = 100MHz
 
     // Enable the PLL
     RCC->CR |= RCC_CR_PLLON;
 
     // Wait for the PLL to be ready (This is ignored for now, it should just flip over automatically when its ready)
-    while ((RCC->CR & RCC_CR_PLLRDY) == 0) ;
+    while ((RCC->CR & RCC_CR_PLLRDY) == 0) asm("");
 
     // Switch over to the PLL
     RCC->CFGR |= RCC_CFGR_SW_PLL;
 
-    while ((RCC->CFGR & RCC_CFGR_SWS_PLL) == 0) ;
+    while ((RCC->CFGR & RCC_CFGR_SWS_PLL) == 0) asm("");
 }
 
 
 // Delay for a certain amount of time
 void delay_us(unsigned long us) {
     // This is more or less witchcraft but it does work...
-    unsigned long l = (us * 23) / 3;
+    unsigned long long l = (us * 100) / 3;
     asm volatile("0:" "subs %[count], 1;" "bne 0b;" : [count] "+r"(l));
 }
 
 
 void delay_ms(unsigned long ms) {
-    delay_us(ms * 1013);
+    for (int i = 0; i < ms; ++i) {
+        delay_us(1000);
+    }
 }
 
 

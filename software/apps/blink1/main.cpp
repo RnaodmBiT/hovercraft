@@ -24,9 +24,9 @@ void main(void) {
     Pio red(Pio::C, 15, Pio::Output);
 
     while (1) {
-        green = ((millis + 0) % 1000) < 500;
-        yellow = ((millis + 333) % 1000) < 500;
-        red = ((millis + 666) % 1000) < 500;
+        green = ((millis + 0) % 100) < 50;
+        yellow = ((millis + 33) % 100) < 50;
+        red = ((millis + 66) % 100) < 50;
     }
 }
 
