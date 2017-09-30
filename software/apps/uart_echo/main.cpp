@@ -1,20 +1,16 @@
 #include <sys.hpp>
-#include <uart.h>
+#include <uart.hpp>
 #include <pio.hpp>
-
-void SysTickHandler(void) { }
 
 
 void main(void) {
 
-    uart_init();
-
+    Uart::Initialize();
     Pio green(Pio::C, 13, Pio::Output);
 
     for (;;) {
-        if (uart_is_read_ready()) {
-            char c = uart_read_byte();
-            uart_write_byte(c);
+        if (Uart::HasData()) {
+            Uart::Write(Uart::Read());
             green = !green;
         }
     }
