@@ -2,31 +2,31 @@
 #include <sys.hpp>
 #include <pio.hpp>
 
+void SysTickHandler();
+
+// SysTick will generate millisecond events
+static const int SysTickHz = 1000;
+
 static volatile int millis = 0;
 
-void SysTickHandler(void) {
-    ++millis;
-}
-
-void sleep(int ms) {
-    int end = millis + ms;
-    while (millis < end) asm("");
-}
+// Define the status LEDs
+Pio green(Pio::C, 13, Pio::Output);
+Pio yellow(Pio::C, 14, Pio::Output);
+Pio red(Pio::C, 15, Pio::Output);
 
 void main(void) {
-
-    SysTick->VAL = 0;
-    SysTick->LOAD = 100000; // This should give 1000Hz
-    SysTick->CTRL |= (1 << SysTick_CTRL_CLKSOURCE_Pos) | (1 << SysTick_CTRL_TICKINT_Pos) | (1 << SysTick_CTRL_ENABLE_Pos);
-
-    Pio green(Pio::C, 13, Pio::Output);
-    Pio yellow(Pio::C, 14, Pio::Output);
-    Pio red(Pio::C, 15, Pio::Output);
+    System::Clock::InitSysTick(SysTickHz, SysTickHandler);
 
     while (1) {
         green = ((millis + 0) % 100) < 50;
         yellow = ((millis + 33) % 100) < 50;
         red = ((millis + 66) % 100) < 50;
     }
+}
+
+
+// SysTick interrupt will be called at 1000 Hz to generate millisecond timing
+void SysTickHandler(void) {
+    ++millis;
 }
 

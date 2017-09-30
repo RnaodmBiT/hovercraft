@@ -1,11 +1,9 @@
-#ifndef SYS_H
-#define SYS_H
-
+#pragma once
 #include <cstdint>
 #include <cstdbool>
 
 
-typedef void (*isr_handler_t)();
+typedef void (*IsrHandler)();
 
 
 // Setup the system clock to run off the external crystal
@@ -16,4 +14,26 @@ void delay_us(unsigned long us);
 void delay_ms(unsigned long ms);
 
 
-#endif
+namespace System {
+
+    enum IRQ {
+        SYSTICK = 15
+    };
+
+
+    class Clock {
+    public:
+        static void Initialize(int frequency = 100);
+
+        static void InitSysTick(int frequency, IsrHandler fn);
+        static void StopSysTick();
+    };
+
+
+    void DelayUs(uint32_t us);
+    void DelayMs(uint32_t us);
+
+    void RegisterInterrupt(int id, IsrHandler fn);
+
+}
+
