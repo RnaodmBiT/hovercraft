@@ -1,22 +1,33 @@
 #include <sys.hpp>
-#include <uart.h>
+#include <uart.hpp>
 #include <pio.hpp>
 
-void SysTickHandler() { }
+volatile int millis = 0;
+volatile bool transmit = false;
+void SysTickHandler() {
+    millis++;
+
+    if (millis % 1000 == 0) {
+        transmit = true;
+    }
+}
 
 void main(void) {
 
     const char msg[] = "hello world!\r\n";
 
-    uart_init();
+    Uart::Initialize();
+    System::Clock::InitSysTick(1000, SysTickHandler);
 
     Pio green(Pio::C, 13, Pio::Output);
     bool state = false;
 
     for (;;) {
-        uart_write_string(msg);
-        delay_ms(500);
-        green = (state = !state);
+        if (transmit) {
+            Uart::Write(msg);
+            green = (state = !state);
+            transmit = false;
+        }
     }
 
     while (1) ;

@@ -16,9 +16,10 @@ CXX_FLAGS = -fno-exceptions -fno-non-call-exceptions -fno-rtti \
             -fno-common -ffunction-sections -fdata-sections
 
 COMPILE = arm-none-eabi-g++ $(CXX_FLAGS) -O3 -g -mcpu=cortex-m4 -mthumb -D$(CPU) $(PERIPHERAL_INC)
-LINK = arm-none-eabi-ld -T../../link.ld -nostartfiles
+LINK = arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -lc -T../../link.ld -nostartfiles
 OBJCOPY = arm-none-eabi-objcopy
 DEBUG = arm-none-eabi-gdb
+SIZE = arm-none-eabi-size
 
 all: $(ELF) Makefile
 
@@ -28,6 +29,7 @@ objs/%.o: %.cpp
 
 $(ELF): $(PERIPHERALS_DIR)/sys/sys.o $(OBJS) $(LIBS)
 	$(LINK) -o $@ $^
+	$(SIZE) $@
 
 program: $(ELF)
 	$(DEBUG) -batch -x ../../gdb/program.gdb $^
