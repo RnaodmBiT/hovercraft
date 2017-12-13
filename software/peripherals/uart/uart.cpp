@@ -40,6 +40,7 @@ void Uart::Write(const char* string, int length) {
 
 
 char Uart::Read() {
+    while (!HasData()) ;
     return USART1->DR & 0xFF;
 }
 
