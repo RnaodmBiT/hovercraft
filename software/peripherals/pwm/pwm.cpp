@@ -18,7 +18,7 @@ void Pwm::Update() {
         if (pwm) {
 
             uint32_t tick_period = update_frequency / pwm->frequency;
-            uint32_t on_period = (tick_period * pwm->duty) / 1024;
+            uint32_t on_period = (tick_period * pwm->duty) / 1000;
 
             uint32_t t = update_ticks % tick_period;
             pwm->pin = (t <= on_period) && pwm->enabled;
