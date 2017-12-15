@@ -16,8 +16,11 @@ Pio yellow(Pio::C, 14, Pio::Output);
 Pio red(Pio::C, 15, Pio::Output);
 
 // Define the left and right motors
-Pwm left(Pio::C, 15, 100, 100);
-Pwm right(Pio::C, 13, 100, 100);
+Pwm left_led(Pio::C, 15, 100, 100);
+Pwm right_led(Pio::C, 13, 100, 100);
+
+Pwm left(Pio::A, 0, 100, 100);
+Pwm right(Pio::A, 1, 100, 100);
 
 
 void main() {
@@ -29,7 +32,7 @@ void main() {
     // Turn off the status LEDs
     green = yellow = red = true;
 
-    uint8_t f = 0, l = 0, r = 0;
+    int8_t f = 0, l = 0, r = 0;
 
 
     while (1) {
@@ -41,20 +44,18 @@ void main() {
             }
         }
 
-        //yellow = !forward;
-        //green = !right;
-        //red = !left;
-
         // left:
         // up -> 100
         // up + right -> 100
         // up + left -> 30
         // right -> 100
 
-        //left.SetServo((f || r) * 100 - l * 30);
-        //right.SetServo((f || l) * 100 - r * 30);
-        left.SetDuty(1000 - 10 * ((f || r) * 100 - l * 70));
-        right.SetDuty(1000 - 10 * ((f || l) * 100 - r * 70)); }
+        left.SetServo((f || r) * 100 - l * 70);
+        right.SetServo((f || l) * 100 - r * 70);
+
+        // Used as a visual output of what *should* be happening
+        left_led.SetDuty(1000 - 10 * ((f || r) * 100 - l * 70));
+        right_led.SetDuty(1000 - 10 * ((f || l) * 100 - r * 70)); }
 }
 
 

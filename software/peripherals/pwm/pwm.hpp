@@ -53,8 +53,16 @@ public:
         duty = d;
     }
 
-    void SetServo(uint32_t s) {
-        duty = 100 + (s < 100 ? s : 100);
+    void SetServo(int32_t s) {
+        if (s < 0) {
+            s = 0;
+        }
+
+        if (s > 100) {
+            s = 100;
+        }
+
+        duty = 100 + s;
     }
 
     void SetActive(bool active) {
