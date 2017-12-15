@@ -6,6 +6,7 @@ class Connection:
     def __init__(self, addr):
         self.mac_addr = addr
         self.socket = bt.BluetoothSocket(bt.RFCOMM)
+        self.file = self.socket.makefile()
 
         try:
             self.socket.connect((addr, 1))
@@ -14,6 +15,7 @@ class Connection:
 
     def send(self, msg):
         self.socket.send(msg)
+        self.file.flush()
 
     def has_data(self):
         return self.socket in select([ self.socket ], [], [], 0)[0]

@@ -1,5 +1,6 @@
 from minibot import Connection
 import pygame
+import time
 
 
 tank_address = "00:06:66:D9:DE:DB"
@@ -26,5 +27,8 @@ while running:
 
     data = bytes([ 74, forward, left, right ])
     bot.send(data)
+
+    time.sleep(0.05)
+
     #print(data)
 
