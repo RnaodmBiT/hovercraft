@@ -31,3 +31,6 @@ _autosave-*
 # VIM backups
 *.swp
 *.swo
+
+# Python caches
+__pycache__
