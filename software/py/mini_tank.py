@@ -3,7 +3,8 @@ import pygame
 import time
 
 
-tank_address = "00:06:66:D9:DE:DB"
+#tank_address = "00:06:66:D9:DE:DB"
+tank_address = "00:06:66:D9:C1:4E"
 bot = Connection(tank_address)
 
 
