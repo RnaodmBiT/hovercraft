@@ -10,6 +10,8 @@ static const int SysTickHz = 100000;
 
 static volatile int ticks = 0;
 
+static volatile int timeout = 0;
+
 // Define the status LEDs
 Pio green(Pio::C, 13, Pio::Output);
 Pio yellow(Pio::C, 14, Pio::Output);
@@ -32,35 +34,56 @@ void main() {
     // Turn off the status LEDs
     green = yellow = red = true;
 
-    int8_t f = 0, l = 0, r = 0;
+    int x = 0, y = 0;
 
 
     while (1) {
+        if (timeout == 0) {
+            x = y = 0;
+        }
+
         if (Uart::HasData()) {
             if (Uart::Read() == 74) {
-                f = Uart::Read();
-                l = Uart::Read();
-                r = Uart::Read();
+                x = (int)Uart::Read() - 127;
+                y = (int)Uart::Read() - 127;
+                timeout = SysTickHz / 5;
             }
         }
 
-        // left:
-        // up -> 100
-        // up + right -> 100
-        // up + left -> 30
-        // right -> 100
+        int l = ((-y + x) * 100) / 127;
+        int r = ((-y - x) * 100) / 127;
 
-        left.SetServo((f || r) * 100 - l * 70);
-        right.SetServo((f || l) * 100 - r * 70);
+        if (l > 100) {
+            l = 100;
+        }
+        if (l < 0) {
+            l = 0;
+        }
+
+        if (r > 100) {
+            r = 100;
+        }
+        if (r < 0) {
+            r = 0;
+        }
+
+
+        left.SetServo(l);
+        right.SetServo(r);
 
         // Used as a visual output of what *should* be happening
-        left_led.SetDuty(1000 - 10 * ((f || r) * 100 - l * 70));
-        right_led.SetDuty(1000 - 10 * ((f || l) * 100 - r * 70)); }
+        left_led.SetDuty(1000 - 10 * l);
+        right_led.SetDuty(1000 - 10 * r);
+    }
 }
 
 
 void SysTickHandler() {
     ++ticks;
     Pwm::Update();
+
+    if (timeout > 0) {
+        timeout--;
+    }
 }
 
